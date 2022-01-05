@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Login Form Example</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+		$(function(){
+			$('#header').load("header.html");
+			$('#footer').load("footer.html");
+		})
+	</script>
+
+</head>
+<body>
+<div id="header"></div>
+<!-- partial:index.partial.html -->
+<div class="login-form">
+
+    <h1>Login</h1>
+    <div class="content">
+      <div class="input-field">
+        <input id="uname" type="text" name="username" placeholder="Username">
+      </div>
+      <div class="input-field">
+        <input id="pass" type="password" name="password" placeholder="Password">
+      </div>
+      <form action="forgot.jsp" method="post">
+        <input type="submit" value="Forgot Password"></input>
+      </form>
+      
+    </div>
+    <div class="action">
+      <form action="register.jsp" method="post">
+        <input type="submit" class="button" value="Register"></input>
+      </form>
+      <form action="/login" method="post">
+        <input type="submit" class="button" value="Sign in"></input>
+      </form>
+      <!--<button>Register</button>
+      <button>Sign in</button>-->
+    </div>
+
+</div>
+<div id="footer"></div>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
