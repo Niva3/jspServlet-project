@@ -35,6 +35,11 @@
 		<servlet-class>com.Users.LogoutServlet</servlet-class>
 	</servlet>
 	
+	<servlet>
+		<servlet-name>DeleteServlet</servlet-name>
+		<servlet-class>com.Users.DeleteServlet</servlet-class>
+	</servlet>
+	
 	<servlet-mapping>
 		<servlet-name>RegisterServlet</servlet-name>
 		<url-pattern>/register</url-pattern>
@@ -53,6 +58,11 @@
 	<servlet-mapping>
 		<servlet-name>LogoutServlet</servlet-name>
 		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>DeleteServlet</servlet-name>
+		<url-pattern>/delete</url-pattern>
 	</servlet-mapping>
 	
 	

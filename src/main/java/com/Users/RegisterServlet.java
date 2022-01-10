@@ -116,12 +116,29 @@ public class RegisterServlet extends HttpServlet
 	        
 	        int result1 = rd.registerUser(rm);
 	        
+	        
 	        int result2=0;
 	        //result2 = ad.registerAddr(am);
-	        for(int i=0; i<total_addresses; i++)
-	        {
-	        	result2=ad.registerAddr(am,i);
+	        try {
+	        	for(int i=0; i<total_addresses; i++)
+		        {
+		        	out.println(i);
+		        	out.println(am.toString());
+		        	if(ad==null)
+		        	{
+		        		out.print("DAO is null");
+		        	}
+		        	result2=ad.registerAddr(am,i,username,out);
+		        }
 	        }
+	        catch(Exception e)
+	        {
+	        	out.println("LOOP:"+e);
+	        	
+	        }
+	        out.println("result1: "+result1);
+	        out.println("result2: "+result2);
+	        
 	        if(result1>0 && result2>0)
 	        {
 	        	RequestDispatcher rqd = request.getRequestDispatcher("success.jsp");

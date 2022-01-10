@@ -1,6 +1,7 @@
 com\Users\LogoutServlet.class
 com\Users\RegisterServlet.class
 com\Users\EditServlet.class
+com\Users\DeleteServlet.class
 com\Users\LoginFilter.class
 com\Users\UserDAO.class
 com\Users\UserModel.class

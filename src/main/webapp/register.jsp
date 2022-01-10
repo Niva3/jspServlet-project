@@ -9,6 +9,7 @@
  	<link rel="stylesheet" href="./style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./validation.js"></script>
 	<script>
 		$(function(){
 			$('#header').load("header.html");
@@ -17,7 +18,7 @@
 	</script>
 </head>
 <body>
-	<div id="header"></div>
+	<!--<div id="header"></div>-->
  <div>
   <h3 align="center" style="color: white">User Register Form</h3>
   <form id="registerForm" action="<%= request.getContextPath() %>/register" method="post">
@@ -120,8 +121,10 @@
 				<input name="pincode" type="text" value="" class="form-control">
 			</div>
 			</div>
+		
+		<button style="cursor:pointer;background-color:red;" class="remove_field btn btn-info">Remove</button>
+		</div><br>
 		<button style="background-color:green;" class="add_field_button btn btn-info active">Add More Address</button>
-		</div>
 		</div>
 		
 	 </div>
@@ -132,6 +135,6 @@
  </div>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script src="fields.js"></script>
- <div id="footer"></div>
+ <!--<div id="footer"></div>-->
 </body>
 </html>

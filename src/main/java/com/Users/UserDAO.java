@@ -1,5 +1,7 @@
 package com.Users;
 import com.Users.UserModel;
+
+import java.io.PrintWriter;
 import java.sql.*;
 import java.util.*;
 
@@ -69,11 +71,21 @@ public class UserDAO
         		String firstname = rs.getString("FirstName");
         		String lastname = rs.getString("LastName");
         		String email = rs.getString("Email");
+        		String gender = rs.getString("Gender");
+        		String languages = rs.getString("Languages");
+        		String contact = rs.getString("Contact");
+        		String password = rs.getString("Password");
+        		String role = rs.getString("Role");
         		
         		user.setID(id);
         		user.setFirstName(firstname);
         		user.setLastName(lastname);
         		user.setEmail(email);
+        		user.setGender(gender);
+        		user.setLanguages(languages);
+        		user.setContact(contact);
+        		user.setPassword(password);
+        		user.setRole(role);
         	}
         	conn.close();	
     	}
@@ -89,12 +101,15 @@ public class UserDAO
     	try
     	{
     		Connection conn = UserDAO.getConnection();
-    		String UPDATE_SQL = "UPDATE users SET FirstName=?, LastName=?, Username=?, Email=? where ID='"+id+"'";
+    		String UPDATE_SQL = "UPDATE users SET FirstName=?, LastName=?, Username=?, Email=?, Gender=?, Languages=?, Contact=? where ID='"+id+"'";
     		PreparedStatement ps = conn.prepareStatement(UPDATE_SQL);
     		ps.setString(1, user.getFirstName());
     		ps.setString(2, user.getLastName());
     		ps.setString(3, user.getUsername());
     		ps.setString(4, user.getEmail());
+    		ps.setString(5, user.getGender());
+    		ps.setString(6, user.getLanguages());
+    		ps.setString(7, user.getContact());
     		
     		res=ps.executeUpdate();
     		conn.close();
@@ -102,6 +117,26 @@ public class UserDAO
     	catch(Exception e)
     	{
     		e.printStackTrace();
+    	}
+    	return res;
+    }
+    
+    public int deleteUser(UserModel user, int id, PrintWriter out)throws Exception
+    {
+    	String temp = Integer.toString(id);
+    	int res = 0;
+		try
+    	{
+    		Connection conn = UserDAO.getConnection();
+    		String DELETE_SQL = "DELETE FROM users where ID=?";
+    		PreparedStatement st = conn.prepareStatement(DELETE_SQL);
+    		st.setInt(1, user.getID());
+    		res = st.executeUpdate();
+    		conn.close();
+    	}
+    	catch(Exception e)
+    	{
+    		out.print(e);
     	}
     	return res;
     }

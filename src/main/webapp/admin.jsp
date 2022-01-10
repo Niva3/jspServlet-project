@@ -45,19 +45,23 @@
      	%>
      </table>
      <br><br>
+     <div>
+     </div>
+     
+     <br>
     <div id="adminDiv" style="display:inline-flex;">
     	
- 		<form action="edit.jsp" method="post">
- 			
-     		<input type="submit" value="EDIT USER"/>
+ 		<form class="form" action="edit.jsp" method="post">
+ 			Enter User's ID: <input id="editID" style="width: 100px" type="text" name="editID"/>
+     		<input style="margin-right: 100px;" type="submit" value="EDIT USER"/>
      		
      	</form>
-    	<form action="delete.jsp" method="post">
-    		
-     		<input type="submit" value="DELETE USER"/>
+    	<form class="form" action="<%= request.getContextPath() %>/delete" method="post">
+    		Enter User's ID: <input id="deleteID" style="width: 100px" type="text" name="deleteID"/>
+     		<input style="margin-right: 100px;" type="submit" value="DELETE USER"/>
      		
      	</form>
-     	<form action="<%= request.getContextPath() %>/logout" method="post">
+     	<form class="form" action="<%= request.getContextPath() %>/logout" method="post">
      		
 			<input type="submit" value="LogOut"></input>
 			

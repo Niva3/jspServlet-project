@@ -17,12 +17,13 @@ pageEncoding="ISO-8859-1"%>
 	</script>
 	</head>
 	<body>
-		<div id="header"></div>
+		<!--<div id="header"></div>-->
 
 		<div  align="center">
 			<h3 align="center" style="color: white">Forgot Password</h3>
 			<form id="forgotForm" action="forgotProcess.jsp" method="post">
 			<h4>To change your password:</h4>
+			<br><br>
 			<table id="table">
 				
 				<tr>
@@ -40,6 +41,6 @@ pageEncoding="ISO-8859-1"%>
 				<input type="submit" value="Confirm"/>
 			</form>
 		</div>
-		<div id="footer"></div>
+		<!--<div id="footer"></div>-->
 	</body>
 </html>

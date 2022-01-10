@@ -7,6 +7,7 @@
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
  	<link rel="stylesheet" href="./style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./validation.js"></script>
 	<script>
 		$(function(){
 			$('#header').load("header.html");
@@ -22,7 +23,7 @@
 			    <div class="action">
 			      <div class="content">
 			    
-			       <form action="<%= request.getContextPath() %>/login" method="post">
+			       <form id="formLogin" action="<%= request.getContextPath() %>/login" method="post">
 				      <div class="input-field">
 				        <input id="uname" type="text" name="username" placeholder="Username">
 				      </div>

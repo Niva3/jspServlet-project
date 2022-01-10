@@ -8,6 +8,13 @@
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
  	<link rel="stylesheet" href="./style.css">
 </head>
+<style>
+	td,th{
+	border: 1px solid black;
+	text-align: center;
+	padding: 10px;
+	}
+</style>
 <body>
  <div align="center">
   <h1 style="color: white">Edit Details</h1><br><br>
@@ -18,9 +25,19 @@
    	<td>Your ID : </td>
    	<td>
    		<%
-	     	int id = (int)session.getAttribute("id");
-			out.print(id);
-			session.setAttribute("id",id);
+   			if(session.getAttribute("id")!=null)
+   			{
+   				int id = (int)session.getAttribute("id");
+   				out.print(id);
+   				session.setAttribute("id",id);
+   			}
+   			else
+   			{
+   				int id = Integer.parseInt(request.getParameter("editID"));
+   				out.print(id);
+   				session.setAttribute("id",id);
+   			}
+	     	
 		%>
 	</td>
    </tr>
@@ -49,13 +66,26 @@
 	     </td>
     </tr>
     <tr>
-	     <td>Address</td>
+	     <td>Gender</td>
 	     <td>
-	     	<input type="text" name="eAddr" />
+	     	<input type="text" name="eGender" />
+	     </td>
+    </tr>
+    <tr>
+	     <td>Languages Known</td>
+	     <td>
+	     	<input type="text" name="eLang" />
+	     </td>
+    </tr>
+    <tr>
+	     <td>Contact</td>
+	     <td>
+	     	<input type="text" name="eContact" />
 	     </td>
     </tr>
    </table>
-   <input type="submit" value="Edit and Save" />
+   <br><br>
+   <input type="submit" class="button" value="Edit and Save" />
   </form>
  </div>
 </body>

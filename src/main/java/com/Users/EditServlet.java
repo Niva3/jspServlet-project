@@ -21,6 +21,7 @@ public class EditServlet extends HttpServlet
 			HttpSession session = request.getSession();
 			int id = (int)session.getAttribute("id");
 			rm.setID(id);
+			
 			if(request.getParameter("efirstName")!=null)
 			{
 				String editedFirstName = request.getParameter("efirstName");
@@ -40,6 +41,21 @@ public class EditServlet extends HttpServlet
 			{
 				String editedEmail = request.getParameter("eEmail");
 				rm.setEmail(editedEmail);
+			}
+			if(request.getParameter("eGender")!=null) 
+			{
+				String editedGender = request.getParameter("eGender");
+				rm.setGender(editedGender);
+			}
+			if(request.getParameter("eLang")!=null) 
+			{
+				String editedLang = request.getParameter("eLang");
+				rm.setLanguages(editedLang);
+			}
+			if(request.getParameter("eContact")!=null) 
+			{
+				String editedContact = request.getParameter("eContact");
+				rm.setContact(editedContact);
 			}
 			
 			int res = rgd.editUser(rm,id);

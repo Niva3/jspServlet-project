@@ -11,7 +11,7 @@ $(document).ready(function(){
 		
 		if(fname.length < 1)
 		{
-			$('#fistName').after('<span class="error">This feild is required</span>');
+			$('#firstName').after('<span class="error">This feild is required</span>');
 		}
 		if(lname.length < 1)
 		{
@@ -30,13 +30,13 @@ $(document).ready(function(){
 				$('#email').after('<span class="error">Enter a valid email address</spann>');
 			}
 		}
-		if(password.length < 8)
+		if(password.length < 5)
 		{
-			$('#password').after('<span class="error">Password should be 8 charcters long</span>');
+			$('#password').after('<span class="error" style="color:red">Password should be 5 charcters long</span>');
 		}
 		if(password!=con_password)
 		{
-			
+			$('#con_password').after('<span class="error">Confirm password doesnt match your password</span>');
 		}
 	});
 	
@@ -58,8 +58,9 @@ $(document).ready(function(){
 		}
 	}); 
 	
-	$('#loginForm').submit(function(e){
+	$('#formLogin').submit(function(e){
 		
+		e.preventDefault();
 		var username = $('#uname').val();
 		var password = $('#pass').val();
 		
